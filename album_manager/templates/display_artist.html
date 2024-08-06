@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}MusicTY{% endblock title %} 
+{% block content %}
+    <h2>{{ artist }}</h2>
+    <p>Has elegido el Artista: <strong>{{ artist | capfirst }}</strong></p>
+    <h3>Caracteristicas del Artista</h3>
+    <ul>
+        <li>Pais: {{ artist.artist_country }}</li>
+        <li>Biografía: {{ artist.artist_biography }}</li>
+    </ul>
+{% endblock content %} 

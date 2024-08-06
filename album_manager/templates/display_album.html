@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}MusicTY{% endblock title %} 
+{% block content %}
+    <h2>{{ album }}</h2>
+    <p>Has elegido el Album: <strong>{{ album | capfirst }}</strong></p>
+    <h3>Caracteristicas del Album</h3>
+    <ul>
+        <li>Año de Lanzamiento: {{ album.year }}</li>
+        <li>Género: {{ album.gender }}</li>
+        <li>Artista Asociado: {{ album.artist }}</li>
+        <li>Detalles del Album: {{ album.album_details }}</li>
+    </ul>
+{% endblock content %} 

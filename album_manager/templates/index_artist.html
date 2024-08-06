@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}MusicTY{% endblock title %}
+{% block content %}
+    <div class="card-group">
+        {% for artist in artists %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ artist.picture.url }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artist }}</h5>
+                        <p class="card-text">Pais: {{ artist.artist_country }} </p>
+                        <a href="artist/{{ artist.id }}" class="btn btn-primary"><i class="fa-regular fa-eye"></i></a>
+                        <a href="edit_artist/{{ artist.id }}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="delete_artist/{{ artist.id }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{% url "album_manager:add_artist" %}" class="btn btn-primary">Crear Nuevo Artista</a>
+{% endblock content %}
